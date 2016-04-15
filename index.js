@@ -71,5 +71,5 @@ module.exports = function (param) {
     return cmd
   }
 
-  return through.obj(electronPacker)
+  return through({objectMode: true}, electronPacker)
 }
