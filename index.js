@@ -58,7 +58,8 @@ module.exports = function (param) {
       path + ' ' +
       param.name +
       ' --platform=' + os +
-      ' --arch=' + arch
+      ' --arch=' + arch +
+      ' --out=' + param.packaging.destination
     if (param.packaging.overwrite) {
       cmd += ' --overwrite'
     }
