@@ -13,12 +13,8 @@ module.exports = function (param) {
 	// see "Writing a plugin"
 	// https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/README.md
   function electronPacker (file, enc, callback) {
-    exec(cmdCreateReleases())
     for (var i = 0; i < param.packaging.platforms.length; i++) {
-      var platform = param.packaging.platforms[i]
-      exec(cmdPackage(platform, file.path))
-      exec(cmdMove(platform))
-      console.log('Moved app to ' + param.packaging.destination)
+      exec(cmdPackage(param.packaging.platforms[i], file.path))
     }
 
 		// Do nothing if no contents
@@ -52,10 +48,6 @@ module.exports = function (param) {
     })
   }
 
-  function cmdCreateReleases () {
-    return 'mkdir -p ' + param.packaging.destination
-  }
-
   function cmdPackage (platform, path) {
     var cmd, os, arch
 
@@ -75,15 +67,6 @@ module.exports = function (param) {
       cmd += ' --asar'
     }
     return cmd
-  }
-
-  function cmdMove (platform) {
-    var name = packageName(platform)
-    return 'cp -R ./' + name + ' ' + param.packaging.destination + '/' + name + ' && rm -rf ./' + name
-  }
-
-  function packageName (platform) {
-    return param.name + '-' + platform
   }
 
   return through.obj(electronPacker)

@@ -1,16 +1,18 @@
 {
   "name": "gulp-electron-packer",
   "version": "0.0.1",
-  "description": "A plugin for Gulp",
+  "description": "Gulp wrapper for electron packager",
   "keywords": [
-    "gulpplugin"
+    "gulpplugin",
+    "electron",
+    "packager"
   ],
   "author": {
-    "name": "Alex Chaplinsky",
+    "name": "Railsware, Alex Chaplinsky",
     "email": "alchaplinsky@gmail.com",
     "url": "https://github.com/alchapone"
   },
-  "repository": "alchapone/gulp-electron-packager",
+  "repository": "git@github.com:railsware/gulp-electron-packer.git",
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
