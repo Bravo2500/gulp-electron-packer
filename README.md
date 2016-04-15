@@ -1,33 +1,33 @@
 (PLUGIN AUTHOR: Please read [Plugin README conventions](https://github.com/wearefractal/gulp/wiki/Plugin-README-Conventions), then delete this line)
 
-# gulp-electron-packager
+# gulp-electron-packer
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
 
-> electron-packager plugin for [gulp](https://github.com/wearefractal/gulp)
+> electron-packer plugin for [gulp](https://github.com/wearefractal/gulp)
 
 ## Usage
 
-First, install `gulp-electron-packager` as a development dependency:
+First, install `gulp-electron-packer` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-electron-packager
+npm install --save-dev gulp-electron-packer
 ```
 
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var electron-packager = require("gulp-electron-packager");
-
+var electronPacker = require("gulp-electron-packer");
+var packageJSON = require('./package.json');
 gulp.src("./src/*.ext")
-	.pipe(electron-packager({
-		msg: "Hello Gulp!"
+	.pipe(electronPacker({
+    packageJSON
 	}))
 	.pipe(gulp.dest("./dist"));
 ```
 
 ## API
 
-### electron-packager(options)
+### electron-packer(options)
 
 #### options.msg
 Type: `String`  
@@ -40,14 +40,14 @@ The message you wish to attach to file.
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
-[npm-url]: https://npmjs.org/package/gulp-electron-packager
-[npm-image]: https://badge.fury.io/js/gulp-electron-packager.png
+[npm-url]: https://npmjs.org/package/gulp-electron-packer
+[npm-image]: https://badge.fury.io/js/gulp-electron-packer.png
 
-[travis-url]: http://travis-ci.org/alchapone/gulp-electron-packager
-[travis-image]: https://secure.travis-ci.org/alchapone/gulp-electron-packager.png?branch=master
+[travis-url]: http://travis-ci.org/alchapone/gulp-electron-packer
+[travis-image]: https://secure.travis-ci.org/alchapone/gulp-electron-packer.png?branch=master
 
-[coveralls-url]: https://coveralls.io/r/alchapone/gulp-electron-packager
-[coveralls-image]: https://coveralls.io/repos/alchapone/gulp-electron-packager/badge.png
+[coveralls-url]: https://coveralls.io/r/alchapone/gulp-electron-packer
+[coveralls-image]: https://coveralls.io/repos/alchapone/gulp-electron-packer/badge.png
 
-[depstat-url]: https://david-dm.org/alchapone/gulp-electron-packager
-[depstat-image]: https://david-dm.org/alchapone/gulp-electron-packager.png
+[depstat-url]: https://david-dm.org/alchapone/gulp-electron-packer
+[depstat-image]: https://david-dm.org/alchapone/gulp-electron-packer.png
